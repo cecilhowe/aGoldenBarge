@@ -61,7 +61,7 @@ const grammar = tracery.createGrammar({
 	// what are we even doing? if you read the tracery tutorial, this is the same as #origin#, only we're calling it something else thematic to our bot.
 
 	'bargeArrive': [
-		'#welcome# #adjective# `#sphere#`, *#notoriety# for* its #habit# and #expertise# #skill#.',
+		'#welcome# #adjective# `#sphere#`, *#notoriety#* for its #habit# and #expertise# #skill#.',
 	],
 
 });
