@@ -1,10 +1,10 @@
 {
   "name": "agoldenbarge",
   "version": "0.0.1",
-  "description": "",
+  "description": "A Discord Bot to travel from sphere to sphere.",
   "main": "aGoldenBarge.js",
   "scripts": {
-    "start": "node aGoldenbarge.js"
+    "start": "node aGoldenBarge.js"
   },
   "engines": {
     "node": "13.7.0",
@@ -16,5 +16,14 @@
     "discord.js": "^11.5.1",
     "eslint": "^6.8.0",
     "tracery-grammar": "^2.7.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cecilhowe/aGoldenBarge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cecilhowe/aGoldenBarge/issues"
+  },
+  "homepage": "https://github.com/cecilhowe/aGoldenBarge#readme"
 }
