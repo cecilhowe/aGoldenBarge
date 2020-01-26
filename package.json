@@ -4,7 +4,11 @@
   "description": "",
   "main": "aGoldenBarge.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node aGoldenbarge.js"
+  },
+  "engines": {
+    "node": "13.7.0",
+    "npm": "6.13.6"
   },
   "author": "",
   "license": "ISC",
