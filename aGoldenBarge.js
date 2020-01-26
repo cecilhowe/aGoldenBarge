@@ -5,7 +5,12 @@ const Discord = require('discord.js');
 // this line tells the bot to search for and include a configuration file, which tells us what our command prefix is and what our secret login token is.
 // see config.json for more information
 
-const { prefix, token } = require('./config.json');
+// const { prefix, token } = require('./config.json');-----------------------------------------------------------------//
+// --------------------------------------------------------------------------------------------------------------------//
+// --------------------------------------------------------------------------------------------------------------------//
+// SPECIAL NOTE, CONFIG VARS CHANGED TO DEPLOY ONLINE VIA HEROKU-------------------------------------------------------//
+// CONFIG COMMENTED OUT, USING PROCESS FOR PREFIX AND TOKEN------------------------------------------------------------//
+const prefix = process.env.prefix;
 
 // the next line tells the bot that every time we say "bot" it means this bot. essentially this is the line that gives the bot life.
 
@@ -137,4 +142,6 @@ bot.on('message', message => {
 // this is the bot login credentials. bots have to login to discord the same way a human does, and the token is like their fast pass through the toll booth.
 // our token is hidden in the config file under the entry "token" and this line tells the bot to look in that file under the entry called token.
 
-bot.login(token);
+// bot.login(token);
+
+bot.login(process.env.token);
