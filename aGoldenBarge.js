@@ -82,7 +82,7 @@ bot.once('ready', async () => {
 	// this line generates a link when the bot starts that a server would use to install A Golden Barge. the link contains the permissions the bot needs
 	// to execute the commands we give it. it also "catches" any errors and tells the console what went wrong.
 	bot.generateInvite(['MANAGE_MESSAGES', 'READ_MESSAGES', 'READ_MESSAGE_HISTORY', 'VIEW_CHANNEL', 'SEND_TTS_MESSAGES']).then(link => {
-		console.log('The Barge can be sent to new spheres by following this link:' + link);
+		console.log('The Barge can be sent to new spheres by following this link:\n' + link);
 	}).catch(err => {
 		console.log(err.stack);
 	});
@@ -109,7 +109,7 @@ bot.on('guildDelete', guild => {
 // finally we come to the part where a user can ask the bot for a random Troika! sphere by typing !where in discord.
 // to start this process, we tell our bot that it needs to be reading messages. this is called listening.
 
-bot.on('message', message => {
+bot.on('message', async message => {
 
 	// now that the bot is listening for messages, we need to tell it which ones to ignore. this line tells it to ignore the following:
 	// messages that don't start with our command prefix (!), messages from other bots (no loops), and it will ignore DMs (no sliding in)
