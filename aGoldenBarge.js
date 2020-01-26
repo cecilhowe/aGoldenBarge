@@ -82,7 +82,7 @@ bot.once('ready', async () => {
 	// this line generates a link when the bot starts that a server would use to install A Golden Barge. the link contains the permissions the bot needs
 	// to execute the commands we give it. it also "catches" any errors and tells the console what went wrong.
 	bot.generateInvite(['MANAGE_MESSAGES', 'READ_MESSAGES', 'READ_MESSAGE_HISTORY', 'VIEW_CHANNEL', 'SEND_TTS_MESSAGES']).then(link => {
-		console.log(link);
+		console.log('The Barge can be sent to new spheres by following this link:' + link);
 	}).catch(err => {
 		console.log(err.stack);
 	});
