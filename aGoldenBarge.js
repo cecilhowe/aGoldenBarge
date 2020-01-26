@@ -101,7 +101,7 @@ bot.on('guildDelete', guild => {
 // finally we come to the part where a user can ask the bot for a random Troika! sphere by typing !where in discord.
 // to start this process, we tell our bot that it needs to be reading messages. this is called listening.
 
-bot.on('message', message => {
+bot.on('message', async message => {
 
 	// now that the bot is listening for messages, we need to tell it which ones to ignore. this line tells it to ignore the following:
 	// messages that don't start with our command prefix (!), messages from other bots (no loops), and it will ignore DMs (no sliding in)
@@ -126,6 +126,8 @@ bot.on('message', message => {
 
 	if (command === 'where') {
 
+		try {
+		
 		// first first try delete the message the user sent, so the server doesn't get glorped up with a billion commands from users. message deleting can be instant by
 		// leaving the parenthesis empty or you can put a timer on it in miliseconds.
 		message.delete([0]);
