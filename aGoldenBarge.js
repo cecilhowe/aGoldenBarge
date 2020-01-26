@@ -101,7 +101,7 @@ bot.on('guildDelete', guild => {
 // finally we come to the part where a user can ask the bot for a random Troika! sphere by typing !where in discord.
 // to start this process, we tell our bot that it needs to be reading messages. this is called listening.
 
-bot.on('message', message => {
+bot.on('message', async message => {
 
 	// now that the bot is listening for messages, we need to tell it which ones to ignore. this line tells it to ignore the following:
 	// messages that don't start with our command prefix (!), messages from other bots (no loops), and it will ignore DMs (no sliding in)
@@ -126,27 +126,25 @@ bot.on('message', message => {
 
 	if (command === 'where') {
 
-
-		// now the bot knows to listen for the for command !where, so it needs to try to do some stuff (give us our tracery grammar) and it needs
-		// to also catch any errors. so first tell it to try some shit
-
 		try {
 
 			// first first try delete the message the user sent, so the server doesn't get glorped up with a billion commands from users. message deleting can be instant by
 			// leaving the parenthesis empty or you can put a timer on it in miliseconds.
-			message.delete([0]);
+			await message.delete([0]);
 
 			// after is told to delete the command from the discord server channel it was sent, the bot will now give it a random grammar from tracery.
 			// this line tells the bot to put the grammar in the channel where it received the command
-			message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
-
-			// now that the bot is done trying to do these things, we need it to tell us if there was an error
+			await message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
 
 		}
+
+		// now that the bot is done trying to do these things, we need it to tell us if there was an error
 
 		catch (error) {
-			console.log('something broke, fuuuccckkkkkkk');
+			console.log('Fuck Your Life, Something Broke!');
+
 		}
+
 	}
 });
 
