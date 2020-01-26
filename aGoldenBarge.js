@@ -66,6 +66,7 @@ const grammar = tracery.createGrammar({
 
 });
 
+
 // that is the meat of this bot; it tells the bot exactly what to say using a bevy of random shit written by Daniel Sell, creator of Troika!
 // next we will write out the part that checks if the bot works, and tells it to output our grammar when a user types !where in Discord
 
@@ -125,17 +126,28 @@ bot.on('message', message => {
 
 	if (command === 'where') {
 
-		// now the bot is aware it needs to do something, and the next line tells it what to do
 
-		// first let's delete the message the user sent, so the server doesn't get glorped up with a billion commands from users. message deleting can be instant by
-		// leaving the parenthesis empty or you can put a timer on it in miliseconds.
-		message.delete([0]);
+		// now the bot knows to listen for the for command !where, so it needs to try to do some stuff (give us our tracery grammar) and it needs
+		// to also catch any errors. so first tell it to try some shit
 
-		// after is told to delete the command from the discord server channel it was sent, the bot will now give it a random grammar from tracery.
-		// this line tells the bot to put the grammar in the channel where it received the command
-		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
+		try {
+
+			// first first try delete the message the user sent, so the server doesn't get glorped up with a billion commands from users. message deleting can be instant by
+			// leaving the parenthesis empty or you can put a timer on it in miliseconds.
+			message.delete([0]);
+
+			// after is told to delete the command from the discord server channel it was sent, the bot will now give it a random grammar from tracery.
+			// this line tells the bot to put the grammar in the channel where it received the command
+			message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
+
+			// now that the bot is done trying to do these things, we need it to tell us if there was an error
+
+		}
+
+		catch (error) {
+			console.log('something broke, fuuuccckkkkkkk');
+		}
 	}
-
 });
 
 
