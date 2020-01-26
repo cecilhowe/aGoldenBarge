@@ -106,7 +106,7 @@ bot.on('message', message => {
 	// now that the bot is listening for messages, we need to tell it which ones to ignore. this line tells it to ignore the following:
 	// messages that don't start with our command prefix (!), messages from other bots (no loops), and it will ignore DMs (no sliding in)
 
-	if (!message.content.startsWith(prefix) || message.author.bot || message.guild === null) return;
+	if (!message.content.startsWith(prefix) || message.author.bot || message.channel.type === 'dm') return;
 
 	// if the message does include the prefix, is not from a bot, and is not a dm, the bot will check to see if it is the right command and then tell it what to do.
 	// the bot needs to search for the command by splitting the message up to individual words, and deciding that the first word in the message, after the prefix, is the command.
