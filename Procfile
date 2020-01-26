@@ -1,1 +1,1 @@
-worker: node aGoldenbarge.js
+worker: node aGoldenBarge.js
