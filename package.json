@@ -1,0 +1,16 @@
+{
+  "name": "agoldenbarge",
+  "version": "0.0.1",
+  "description": "",
+  "main": "aGoldenBarge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "eslint": "^6.8.0",
+    "tracery-grammar": "^2.7.4"
+  }
+}
