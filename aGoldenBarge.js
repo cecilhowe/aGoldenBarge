@@ -76,8 +76,16 @@ const grammar = tracery.createGrammar({
 // running fine "without hesitation" and tells how many discord users can use the bot (sailors) and how many discord servers the bot is installed on (spheres).
 // this function will only happen once, whenever the bot is turned on, so we use bot.once
 
-bot.once('ready', () => {
+bot.once('ready', async () => {
 	console.log (`The Golden Barge sails without hesitation...\n...The Golden Barge ferries ${bot.users.size} sailors among some ${bot.guilds.size} spheres!`);
+
+	// this line generates a link when the bot starts that a server would use to install A Golden Barge. the link contains the permissions the bot needs
+	// to execute the commands we give it. it also "catches" any errors and tells the console what went wrong.
+	bot.generateInvite(['MANAGE_MESSAGES', 'READ_MESSAGES', 'READ_MESSAGE_HISTORY', 'VIEW_CHANNEL', 'SEND_TTS_MESSAGES']).then(link => {
+		console.log(link);
+	}).catch(err => {
+		console.log(err.stack);
+	});
 
 	// discord users can set statuses and activities that show under their names in the people lists, but bots can only show activities. let's give this one something good.
 	// you only have a couple options that preceed the name of your activity, and we're choosing the listen one.
