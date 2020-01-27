@@ -81,7 +81,7 @@ bot.once('ready', async () => {
 
 	// this line generates a link when the bot starts that a server would use to install A Golden Barge. the link contains the permissions the bot needs
 	// to execute the commands we give it. it also "catches" any errors and tells the console what went wrong.
-	bot.generateInvite(['MANAGE_MESSAGES', 'READ_MESSAGES', 'READ_MESSAGE_HISTORY', 'VIEW_CHANNEL', 'SEND_TTS_MESSAGES']).then(link => {
+	bot.generateInvite(['MANAGE_MESSAGES', 'READ_MESSAGES', 'READ_MESSAGE_HISTORY', 'VIEW_CHANNEL', 'SEND_MESSAGES']).then(link => {
 		console.log('The Barge can be sent to new spheres by following this link:\n' + link);
 	}).catch(err => {
 		console.log(err.stack);
@@ -136,10 +136,8 @@ bot.on('message', async message => {
 
 		// first first try delete the message the user sent, so the server doesn't get glorped up with a billion commands from users. message deleting can be instant by
 		// leaving the parenthesis empty or you can put a timer on it in miliseconds.
-		message.delete([0]).catch(err => {
-			console.log('A Golden Barge could not delete a command!\n' + err.stack);
-			message.channel.send('```\nA Golden Barge needs permission to manage messages in this channel if you want it to delete !where commands.\n```');
-		});
+		message.delete().catch(() => null);
+		message.channel.send('```\nA Golden Barge needs permission to manage messages in this channel if you want it to delete !where commands.\n```');
 
 		// after is told to delete the command from the discord server channel it was sent, the bot will now give it a random grammar from tracery.
 		// this line tells the bot to put the grammar in the channel where it received the command
