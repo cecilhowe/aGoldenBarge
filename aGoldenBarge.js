@@ -132,16 +132,20 @@ bot.on('message', async message => {
 	// says !where then you need to do something." javascript uses the statement "else if" instead of "but." this line tells the bot what to do if
 	// the !where command is used.
 
-	if (command === 'where') {
+	// if the user uses the !where the bot will do something. if the bot has permission to delete messages, the bot will delete the !where command from the chat and then server
+	// the grammar
 
-		// first first try delete the message the user sent, so the server doesn't get glorped up with a billion commands from users. message deleting can be instant by
-		// leaving the parenthesis empty or you can put a timer on it in miliseconds.
+	if (command === 'where' && guild.me.hasPermission('MANAGE_MESSAGES')) {
 		message.delete().catch(() => null);
-
-		// after is told to delete the command from the discord server channel it was sent, the bot will now give it a random grammar from tracery.
-		// this line tells the bot to put the grammar in the channel where it received the command
 		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
 	}
+
+	// if the user uses the !where command and the bot does not have permission to delete messages, it will just server the grammar.
+
+	if (command === 'where' && !guild.me.hasPermission('MANAGE_MESSAGES')) {
+		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
+	}
+
 });
 
 
