@@ -138,7 +138,7 @@ bot.on('message', async message => {
 		// leaving the parenthesis empty or you can put a timer on it in miliseconds.
 		message.delete([0]).catch(err => {
 			console.log('A Golden Barge could not delete a command!\n' + err.stack);
-			message.channel.send('```A Golden Barge needs permission to manage messages in this channel if you want it to delete !where commands.```');
+			message.channel.send('```\nA Golden Barge needs permission to manage messages in this channel if you want it to delete !where commands.\n```');
 		});
 
 		// after is told to delete the command from the discord server channel it was sent, the bot will now give it a random grammar from tracery.
