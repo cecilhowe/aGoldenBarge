@@ -126,23 +126,16 @@ bot.on('message', async message => {
 	// this turns the first word into a command (and makes it lowercase for ease of use)
 	const command = args.shift().toLowerCase();
 
-	// currently this bot only has the one command, so if the user's message has anything other than !where the bot goes for a cigarette break.
+	// this bot only has the one command, so if the user's message has anything other than !where the bot goes for a cigarette break.
 	// but we still need to tell the bot what to do if the user does in fact send a message in the discord server that says !where
 	// we already said "dear bot, if the message is a dm, from another bot, or doesn't have a ! then do nothing" so we need to say "but! if the message
-	// says !where then you need to do something." javascript uses the statement "else if" instead of "but." this line tells the bot what to do if
-	// the !where command is used.
+	// says !where then you need to do something."
 
-	// if the user uses the !where the bot will do something. if the bot has permission to delete messages, the bot will delete the !where command from the chat and then server
-	// the grammar
+	// if the user uses the !where the bot will do something. if the bot has permission to delete messages, the bot will delete the !where command from the chat and then serve
+	// the grammar. if the bot doesn't have permission to delete, it will catch an error but still serve the grammar. done.
 
-	if (command === 'where' && bot.guildMember.me.hasPermission(['MANAGE_MESSAGES'])) {
+	if (command === 'where') {
 		message.delete().catch(() => null);
-		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
-	}
-
-	// if the user uses the !where command and the bot does not have permission to delete messages, it will just server the grammar.
-
-	if (command === 'where' && !bot.guildMember.me.hasPermission('MANAGE_MESSAGES')) {
 		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
 	}
 
