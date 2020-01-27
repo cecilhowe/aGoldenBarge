@@ -135,7 +135,7 @@ bot.on('message', async message => {
 	// if the user uses the !where the bot will do something. if the bot has permission to delete messages, the bot will delete the !where command from the chat and then server
 	// the grammar
 
-	if (command === 'where' && bot.guild.hasPermission('MANAGE_MESSAGES')) {
+	if (command === 'where' && bot.guild.hasPermission(['MANAGE_MESSAGES'])) {
 		message.delete().catch(() => null);
 		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
 	}
