@@ -124,7 +124,7 @@ const grammar = tracery.createGrammar({
 	],
 	'11': [ 'does `#club#` damage (as a club). ',
 	],
-	'12': [ 'does `#unarmed#` damage (as a unarmed). ',
+	'12': [ 'does `#unarmed#` damage (as unarmed). ',
 	],
 	'13': [ 'does `#fusil#` damage (as a fusil). ',
 	],
@@ -140,7 +140,7 @@ const grammar = tracery.createGrammar({
 	],
 	'19': [ 'does `#large#` damage (as a large beast). ',
 	],
-	'20': [ 'does `#gigantic#` damage (as a gigantic). ',
+	'20': [ 'does `#gigantic#` damage (as a gigantic beast). ',
 	],
 	'21': [ 'does `#jolt#` damage (as jolt).',
 	],
@@ -225,131 +225,132 @@ bot.on('message', async message => {
 
 	// !damage: melee
 
-	if (command === 'damage' || command === 'd' && args[0] === 'sword') {
+	if (command === 'damage' && args[0] === 'sword') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#0#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'axe') {
+	if (command === 'damage' && args[0] === 'axe') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#1#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'knife') {
+	if (command === 'damage' && args[0] === 'knife') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#2#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'staff') {
+	if (command === 'damage' && args[0] === 'staff') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#3#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'hammer') {
+	if (command === 'damage' && args[0] === 'hammer') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#4#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'spear') {
+	if (command === 'damage' && args[0] === 'spear') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#5#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'longsword') {
+	if (command === 'damage' && args[0] === 'longsword') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#6#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'mace') {
+	if (command === 'damage' && args[0] === 'mace') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#7#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'polearm') {
+	if (command === 'damage' && args[0] === 'polearm') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#8#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'maul') {
+	if (command === 'damage' && args[0] === 'maul') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#9#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'greatsword') {
+	if (command === 'damage' && args[0] === 'greatsword') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#10#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'club') {
+	if (command === 'damage' && args[0] === 'club') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#11#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'unarmed') {
+	if (command === 'damage' && args[0] === 'unarmed') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#12#')}`);
 	}
 
 	// !damage: ranged
 
-	if (command === 'damage' || command === 'd' && args[0] === 'fusil') {
+	if (command === 'damage' && args[0] === 'fusil') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#13#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'bow') {
+	if (command === 'damage' && args[0] === 'bow') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#14#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'crossbow') {
+	if (command === 'damage' && args[0] === 'crossbow') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#15#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'pistolet') {
+	if (command === 'damage' && args[0] === 'pistolet') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#16#')}`);
 	}
 
 	// !damage: beastly
 
-	if (command === 'damage' || command === 'd' && args[0] === 'small') {
+	if (command === 'damage' && args[0] === 'small') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#17#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'modest') {
+	if (command === 'damage' && args[0] === 'modest') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#18#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'large') {
+	if (command === 'damage' && args[0] === 'large') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#19#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'gigantic') {
+	if (command === 'damage' && args[0] === 'gigantic') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#20#')}`);
 	}
 
 	// !damage: magic
 
-	if (command === 'damage' || command === 'd' && args[0] === 'jolt') {
+	if (command === 'damage' && args[0] === 'jolt') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#21#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'fire') {
+	if (command === 'damage' && args[0] === 'fire') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#22#')}`);
 	}
 
-	if (command === 'damage' || command === 'd' && args[0] === 'dragon') {
+	if (command === 'damage' && args[0] === 'dragon') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#23#')}`);
 	}
+
 });
 
 
