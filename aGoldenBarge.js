@@ -42,6 +42,11 @@ const { skill } = require('./symbolLists/skillList.json');
 const { sphere } = require('./symbolLists/sphereList.json');
 const { welcome } = require('./symbolLists/welcomeList.json');
 
+// damages
+
+const { sword, axe, knife, staff, hammer, spear, longsword, mace, polearm, maul, greatsword, club, unarmed } = require('./symbolLists/damageMelee.json');
+
+
 // now we need to tell the bot what to look for in those external files when it goes looking to make our grammar.
 // the first line of this part tells the bot to create the tracery grammar. the lines after that tell the bot what to look for in those external files.
 // for example, on LINE 45 it says 'adjective': adjective, which is the bot telling itself that the #adjective# symbols for our grammar are the same 'adjective'
@@ -49,6 +54,7 @@ const { welcome } = require('./symbolLists/welcomeList.json');
 // in that file.
 
 const grammar = tracery.createGrammar({
+	// for !where command
 	'adjective': adjective,
 	'expertise': expertise,
 	'habit': habit,
@@ -56,6 +62,20 @@ const grammar = tracery.createGrammar({
 	'skill': skill,
 	'sphere': sphere,
 	'welcome': welcome,
+	// for !damage command
+	'sword': sword,
+	'axe': axe,
+	'knife': knife,
+	'staff': staff,
+	'hammer': hammer,
+	'spear': spear,
+	'longsword': longsword,
+	'mace': mace,
+	'polearm': polearm,
+	'maul': maul,
+	'greatsword': greatsword,
+	'club': club,
+	'unarmed': unarmed,
 
 	// now we need to make the grammar. we're doing that in this file instead of the external file because this is only a couple lines and if we fuck this up then
 	// what are we even doing? if you read the tracery tutorial, this is the same as #origin#, only we're calling it something else thematic to our bot.
@@ -64,6 +84,32 @@ const grammar = tracery.createGrammar({
 		'#welcome# `#adjective# #sphere#`, #notoriety# for its #habit# and #expertise# #skill#.',
 	],
 
+	'1': [ 'does `#sword#` damage (as a sword). ',
+	],
+	'2': [ 'does `#axe#` damage (as an axe).',
+	],
+	'3': [ 'does `#knife#` damage (as a knife). ',
+	],
+	'4': [ 'does `#staff#` damage (as a staff). ',
+	],
+	'5': [ 'does `#hammer#` damage (as a hammer). ',
+	],
+	'6': [ 'does `#spear#` damage (as a spear). ',
+	],
+	'7': [ 'does `#longsword#` damage (as a longsword). ',
+	],
+	'8': [ 'does `#mace#` damage (as a mace). ',
+	],
+	'9': [ 'does `#polearm#` damage (as a polearm). ',
+	],
+	'10': [ 'does `#maul#` damage (as a maul). ',
+	],
+	'11': [ 'does `#greatsword#` damage (as a greatsword). ',
+	],
+	'12': [ 'does `#club#` damage (as a club). ',
+	],
+	'13': [ 'does `#unarmed#` damage (as a unarmed). ',
+	],
 });
 
 
@@ -137,6 +183,11 @@ bot.on('message', async message => {
 	if (command === 'where') {
 		message.delete().catch(() => null);
 		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
+	}
+
+	if (command === 'damage' && args[1] === 'sword') {
+		message.delete().catch(() => null);
+		message.channel.send(`${grammar.flatten('#1#')}`);
 	}
 
 });
