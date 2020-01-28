@@ -219,148 +219,147 @@ bot.on('message', async message => {
 	// the grammar. if the bot doesn't have permission to delete, it will catch an error but still serve the grammar. done.
 
 	if (command === 'where' || command === 'w') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
 	}
 
 	// !damage: melee
 
 	if (command === 'damage' && args[0] === 'sword') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#0#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'axe') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#1#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'knife') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#2#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'staff') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#3#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'hammer') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#4#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'spear') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#5#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'longsword') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#6#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'mace') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#7#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'polearm') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#8#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'maul') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#9#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'greatsword') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#10#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'club') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#11#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'unarmed') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#12#')}`);
 	}
 
 	// !damage: ranged
 
 	if (command === 'damage' && args[0] === 'fusil') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#13#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'bow') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#14#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'crossbow') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#15#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'pistolet') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#16#')}`);
 	}
 
 	// !damage: beastly
 
 	if (command === 'damage' && args[0] === 'small') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#17#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'modest') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#18#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'large') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#19#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'gigantic') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#20#')}`);
 	}
 
 	// !damage: magic
 
 	if (command === 'damage' && args[0] === 'jolt') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#21#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'fire') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#22#')}`);
 	}
 
 	if (command === 'damage' && args[0] === 'dragon') {
-		message.delete().catch(() => null);
+		message.delete(500).catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#23#')}`);
 	}
 
 	// debug delete
 
 	if (command === 'debug' && args[0] === 'delete' && message.member.hasPermission('ADMINISTRATOR')) {
-		message.delete().catch(() => null);
 		const amount = parseInt(args[1]);
 		if (isNaN(amount)) {
 			return message.reply('Please put a number after the delete command.');
 		}
 		else {
-			message.channel.bulkDelete(amount, true);
+			message.channel.bulkDelete(amount + 1, true);
 		}
 	}
 
