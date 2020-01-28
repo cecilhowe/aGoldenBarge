@@ -182,72 +182,72 @@ bot.on('message', async message => {
 	// if the user uses the !where the bot will do something. if the bot has permission to delete messages, the bot will delete the !where command from the chat and then serve
 	// the grammar. if the bot doesn't have permission to delete, it will catch an error but still serve the grammar. done.
 
-	if (command === 'where') {
+	if (command === 'where' || command === 'w') {
 		message.delete().catch(() => null);
 		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'sword') {
+	if (command === 'damage' || command === 'd' && args[0] === 'sword') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#0#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'axe') {
+	if (command === 'damage' || command === 'd' && args[0] === 'axe') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#1#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'knife') {
+	if (command === 'damage' || command === 'd' && args[0] === 'knife') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#2#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'staff') {
+	if (command === 'damage' || command === 'd' && args[0] === 'staff') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#3#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'hammer') {
+	if (command === 'damage' || command === 'd' && args[0] === 'hammer') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#4#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'spear') {
+	if (command === 'damage' || command === 'd' && args[0] === 'spear') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#5#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'longsword') {
+	if (command === 'damage' || command === 'd' && args[0] === 'longsword') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#6#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'mace') {
+	if (command === 'damage' || command === 'd' && args[0] === 'mace') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#7#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'polearm') {
+	if (command === 'damage' || command === 'd' && args[0] === 'polearm') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#8#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'maul') {
+	if (command === 'damage' || command === 'd' && args[0] === 'maul') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#9#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'greatsword') {
+	if (command === 'damage' || command === 'd' && args[0] === 'greatsword') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#10#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'club') {
+	if (command === 'damage' || command === 'd' && args[0] === 'club') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#11#')}`);
 	}
 
-	if (command === 'damage' && args[0] === 'unarmed') {
+	if (command === 'damage' || command === 'd' && args[0] === 'unarmed') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#11#')}`);
 	}
