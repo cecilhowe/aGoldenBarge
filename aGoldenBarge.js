@@ -355,8 +355,10 @@ bot.on('message', async message => {
 
 	if (command === 'debug' && args[0] === 'delete' && message.member.hasPermission('ADMINISTRATOR')) {
 		message.delete().catch(() => null);
-		const fetched = message.channel.fetchMessages({ limit: args [1] }).catch(() => null);
-		message.channel.bulkDelete(fetched).catch(() => null);
+		const amount = parseInt(args[1]);
+		if (isNaN(amount)) {
+			return message.reply('Please put a number after the delete command.');
+		}
 	}
 
 });
