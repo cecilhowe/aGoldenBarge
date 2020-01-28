@@ -44,9 +44,9 @@ const { welcome } = require('./symbolLists/welcomeList.json');
 
 // damages
 const { sword, axe, knife, staff, hammer, spear, longsword, mace, polearm, maul, greatsword, club, unarmed } = require('./symbolLists/damageMelee.json');
-// const { fusil, bow, crossbow, pistolet } = require('./symbolLists/damageRanged.json');
-// const { small, modest, large, gigantic } = require('./symbolLists/damageBeastly.json');
-// const { jolt, fire, dragonfire } = require('./symbolLists/damageMagic.json');
+const { fusil, bow, crossbow, pistolet } = require('./symbolLists/damageRanged.json');
+const { small, modest, large, gigantic } = require('./symbolLists/damageBeastly.json');
+const { jolt, fire, dragonfire } = require('./symbolLists/damageMagic.json');
 
 
 // now we need to tell the bot what to look for in those external files when it goes looking to make our grammar.
@@ -56,7 +56,7 @@ const { sword, axe, knife, staff, hammer, spear, longsword, mace, polearm, maul,
 // in that file.
 
 const grammar = tracery.createGrammar({
-	// for !where command
+	// !where
 	'adjective': adjective,
 	'expertise': expertise,
 	'habit': habit,
@@ -64,7 +64,7 @@ const grammar = tracery.createGrammar({
 	'skill': skill,
 	'sphere': sphere,
 	'welcome': welcome,
-	// for !damage command
+	// !dammage: melee
 	'sword': sword,
 	'axe': axe,
 	'knife': knife,
@@ -78,6 +78,20 @@ const grammar = tracery.createGrammar({
 	'greatsword': greatsword,
 	'club': club,
 	'unarmed': unarmed,
+	// !damage: ranged
+	'fusil': fusil,
+	'bow': bow,
+	'crossbow': crossbow,
+	'pistolet': pistolet,
+	// !damage: beast
+	'small': small,
+	'modest': modest,
+	'large': large,
+	'gigantic': gigantic,
+	// !damage: magic
+	'jolt': jolt,
+	'fire': fire,
+	'dragonfire': dragonfire,
 
 	// now we need to make the grammar. we're doing that in this file instead of the external file because this is only a couple lines and if we fuck this up then
 	// what are we even doing? if you read the tracery tutorial, this is the same as #origin#, only we're calling it something else thematic to our bot.
@@ -111,6 +125,28 @@ const grammar = tracery.createGrammar({
 	'11': [ 'does `#club#` damage (as a club). ',
 	],
 	'12': [ 'does `#unarmed#` damage (as a unarmed). ',
+	],
+	'13': [ 'does `#fusil#` damage (as a fusil). ',
+	],
+	'14': [ 'does `#bow#` damage (as a bow). ',
+	],
+	'15': [ 'does `#crossbow#` damage (as a crossbow). ',
+	],
+	'16': [ 'does `#pistolet#` damage (as a pistolet). ',
+	],
+	'17': [ 'does `#small#` damage (as a small beast). ',
+	],
+	'18': [ 'does `#modest#` damage (as a modest beast). ',
+	],
+	'19': [ 'does `#large#` damage (as a large beast). ',
+	],
+	'20': [ 'does `#gigantic#` damage (as a gigantic). ',
+	],
+	'21': [ 'does `#jolt#` damage (as jolt).',
+	],
+	'22': [ 'does `#fire#` damage (as a fire bolt). ',
+	],
+	'23': [ 'does `#dragonfire#` damage (as a dragon-fire). ',
 	],
 });
 
@@ -187,6 +223,8 @@ bot.on('message', async message => {
 		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
 	}
 
+	// !damage: melee
+
 	if (command === 'damage' || command === 'd' && args[0] === 'sword') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#0#')}`);
@@ -249,9 +287,69 @@ bot.on('message', async message => {
 
 	if (command === 'damage' || command === 'd' && args[0] === 'unarmed') {
 		message.delete().catch(() => null);
-		message.channel.send(`${message.author} ${grammar.flatten('#11#')}`);
+		message.channel.send(`${message.author} ${grammar.flatten('#12#')}`);
 	}
 
+	// !damage: ranged
+
+	if (command === 'damage' || command === 'd' && args[0] === 'fusil') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#13#')}`);
+	}
+
+	if (command === 'damage' || command === 'd' && args[0] === 'bow') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#14#')}`);
+	}
+
+	if (command === 'damage' || command === 'd' && args[0] === 'crossbow') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#15#')}`);
+	}
+
+	if (command === 'damage' || command === 'd' && args[0] === 'pistolet') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#16#')}`);
+	}
+
+	// !damage: beastly
+
+	if (command === 'damage' || command === 'd' && args[0] === 'small') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#17#')}`);
+	}
+
+	if (command === 'damage' || command === 'd' && args[0] === 'modest') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#18#')}`);
+	}
+
+	if (command === 'damage' || command === 'd' && args[0] === 'large') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#19#')}`);
+	}
+
+	if (command === 'damage' || command === 'd' && args[0] === 'gigantic') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#20#')}`);
+	}
+
+	// !damage: magic
+
+	if (command === 'damage' || command === 'd' && args[0] === 'jolt') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#21#')}`);
+	}
+
+	if (command === 'damage' || command === 'd' && args[0] === 'fire') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#22#')}`);
+	}
+
+	if (command === 'damage' || command === 'd' && args[0] === 'dragon') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#23#')}`);
+	}
 });
 
 
