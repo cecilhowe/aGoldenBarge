@@ -43,8 +43,10 @@ const { sphere } = require('./symbolLists/sphereList.json');
 const { welcome } = require('./symbolLists/welcomeList.json');
 
 // damages
-
 const { sword, axe, knife, staff, hammer, spear, longsword, mace, polearm, maul, greatsword, club, unarmed } = require('./symbolLists/damageMelee.json');
+// const { fusil, bow, crossbow, pistolet } = require('./symbolLists/damageRanged.json');
+// const { small, modest, large, gigantic } = require('./symbolLists/damageBeastly.json');
+// const { jolt, fire, dragonfire } = require('./symbolLists/damageMagic.json');
 
 
 // now we need to tell the bot what to look for in those external files when it goes looking to make our grammar.
@@ -193,6 +195,61 @@ bot.on('message', async message => {
 	if (command === 'damage' && args[0] === 'axe') {
 		message.delete().catch(() => null);
 		message.channel.send(`${message.author} ${grammar.flatten('#1#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'knife') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#2#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'staff') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#3#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'hammer') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#4#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'spear') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#5#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'longsword') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#6#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'mace') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#7#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'polearm') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#8#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'maul') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#9#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'greatsword') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#10#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'club') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#11#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'unarmed') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#11#')}`);
 	}
 
 });
