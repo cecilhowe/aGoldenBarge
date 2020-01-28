@@ -351,6 +351,14 @@ bot.on('message', async message => {
 		message.channel.send(`${message.author} ${grammar.flatten('#23#')}`);
 	}
 
+	// debug delete
+
+	if (command === 'debug' && args[0] === 'delete' && message.member.hasPermission('ADMINISTRATOR')) {
+		message.delete().catch(() => null);
+		const fetched = message.channel.fetchMessages({ limit: args [1] }).catch(() => null);
+		message.channel.bulkDelete(fetched).catch(() => null);
+	}
+
 });
 
 
