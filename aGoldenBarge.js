@@ -44,9 +44,9 @@ const { welcome } = require('./symbolLists/welcomeList.json');
 
 // damages
 const { sword, axe, knife, staff, hammer, spear, longsword, mace, polearm, maul, greatsword, club, unarmed } = require('./symbolLists/damageMelee.json');
-const { fusil, bow, crossbow, pistolet } = require('./symbolLists/damageRanged.json');
-const { small, modest, large, gigantic } = require('./symbolLists/damageBeastly.json');
-const { jolt, fire, dragonfire } = require('./symbolLists/damageMagic.json');
+const { fusil, bow, crossbow, pistolet } = require('./symbolLists/damageLists/damageRanged.json');
+const { small, modest, large, gigantic } = require('./symbolLists/damageLists/damageBeastly.json');
+const { jolt, fire, dragonfire } = require('./symbolLists/damageLists/damageMagic.json');
 
 
 // now we need to tell the bot what to look for in those external files when it goes looking to make our grammar.
