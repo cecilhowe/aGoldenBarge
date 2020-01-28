@@ -359,6 +359,9 @@ bot.on('message', async message => {
 		if (isNaN(amount)) {
 			return message.reply('Please put a number after the delete command.');
 		}
+		else {
+			message.channel.bulkDelete(amount, true);
+		}
 	}
 
 });
