@@ -84,31 +84,31 @@ const grammar = tracery.createGrammar({
 		'#welcome# `#adjective# #sphere#`, #notoriety# for its #habit# and #expertise# #skill#.',
 	],
 
-	'1': [ 'does `#sword#` damage (as a sword). ',
+	'0': [ 'does `#sword#` damage (as a sword). ',
 	],
-	'2': [ 'does `#axe#` damage (as an axe).',
+	'1': [ 'does `#axe#` damage (as an axe).',
 	],
-	'3': [ 'does `#knife#` damage (as a knife). ',
+	'2': [ 'does `#knife#` damage (as a knife). ',
 	],
-	'4': [ 'does `#staff#` damage (as a staff). ',
+	'3': [ 'does `#staff#` damage (as a staff). ',
 	],
-	'5': [ 'does `#hammer#` damage (as a hammer). ',
+	'4': [ 'does `#hammer#` damage (as a hammer). ',
 	],
-	'6': [ 'does `#spear#` damage (as a spear). ',
+	'5': [ 'does `#spear#` damage (as a spear). ',
 	],
-	'7': [ 'does `#longsword#` damage (as a longsword). ',
+	'6': [ 'does `#longsword#` damage (as a longsword). ',
 	],
-	'8': [ 'does `#mace#` damage (as a mace). ',
+	'7': [ 'does `#mace#` damage (as a mace). ',
 	],
-	'9': [ 'does `#polearm#` damage (as a polearm). ',
+	'8': [ 'does `#polearm#` damage (as a polearm). ',
 	],
-	'10': [ 'does `#maul#` damage (as a maul). ',
+	'9': [ 'does `#maul#` damage (as a maul). ',
 	],
-	'11': [ 'does `#greatsword#` damage (as a greatsword). ',
+	'10': [ 'does `#greatsword#` damage (as a greatsword). ',
 	],
-	'12': [ 'does `#club#` damage (as a club). ',
+	'11': [ 'does `#club#` damage (as a club). ',
 	],
-	'13': [ 'does `#unarmed#` damage (as a unarmed). ',
+	'12': [ 'does `#unarmed#` damage (as a unarmed). ',
 	],
 });
 
@@ -185,9 +185,14 @@ bot.on('message', async message => {
 		message.channel.send(`${grammar.flatten('#bargeArrive#')}`);
 	}
 
-	if (command === 'damage' && args[1] === 'sword') {
+	if (command === 'damage' && args[0] === 'sword') {
 		message.delete().catch(() => null);
-		message.channel.send(`${grammar.flatten('#1#')}`);
+		message.channel.send(`${message.author} ${grammar.flatten('#0#')}`);
+	}
+
+	if (command === 'damage' && args[0] === 'axe') {
+		message.delete().catch(() => null);
+		message.channel.send(`${message.author} ${grammar.flatten('#1#')}`);
 	}
 
 });
