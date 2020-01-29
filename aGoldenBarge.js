@@ -43,7 +43,7 @@ const { sphere } = require('./symbolLists/sphereList.json');
 const { welcome } = require('./symbolLists/welcomeList.json');
 
 // damages
-const { sword, axe, knife, staff, hammer, spear, longsword, mace, polearm, maul, greatsword, club, unarmed } = require('./symbolLists/damageMelee.json');
+const { sword, axe, knife, staff, hammer, spear, longsword, mace, polearm, maul, greatsword, club, unarmed } = require('./symbolLists/damageLists/damageMelee.json');
 const { fusil, bow, crossbow, pistolet } = require('./symbolLists/damageLists/damageRanged.json');
 const { small, modest, large, gigantic } = require('./symbolLists/damageLists/damageBeastly.json');
 const { jolt, fire, dragonfire } = require('./symbolLists/damageLists/damageMagic.json');
