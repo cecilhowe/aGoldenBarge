@@ -180,13 +180,15 @@ bot.once('ready', async () => {
 // let's send a message to the console whenever a new discord server installs A Golden Barge. this function tells the console how many people are on the server and
 // updates the number of active server installs. this function will happen the entire time the bot is on, so we use bot.on
 
-bot.on('guildCreate', guild => {
+// eslint-disable-next-line
+bot.on('guildCreate', _guild => {
 	console.log(`${bot.users.size} sailors have boarded the Golden Barge—now servicing ${bot.guilds.size} spheres.`);
 });
 
 // now let's tell the console when a server uninstalls or yeets the bot
 
-bot.on('guildDelete', guild => {
+// eslint-disable-next-line
+bot.on('guildDelete', _guild => {
 	console.log(`${bot.users.size} sailors have fallen from the Golden Barge. Service shrinks to ${bot.guilds.size} spheres.`);
 });
 
